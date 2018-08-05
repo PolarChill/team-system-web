@@ -1,0 +1,35 @@
+
+.content{
+  margin: 10px 0px;
+
+
+
+}
+.code-input{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.name-input{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.sex-input{
+  width: 80%;
+  display: inline-block;
+
+  margin: 10px 10px 10px 47px ;
+}
+.age-input{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}

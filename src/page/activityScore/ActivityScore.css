@@ -1,0 +1,18 @@
+.task {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.task-content{
+  width: 80%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
+.task-submit {
+  align-self: right;
+}
