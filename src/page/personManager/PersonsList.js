@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {Table, Button, Input, Modal} from 'antd';
+import {Table, Button} from 'antd';
 import urls from '../tools/urls';
 import BaseService from '../tools/baseService';
 import CreatePerson from "./CreatePerson";
 
-const Search = Input.Search;
-const confirm = Modal.confirm;
 const data = [{
   key: '1',
   code: '1',

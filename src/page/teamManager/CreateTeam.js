@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import {Input, Modal, Radio, message, Form, Select, Row, Col, Button, Icon} from 'antd';
+import {Input, Modal} from 'antd';
 import urls from '../tools/urls';
 import BaseService from '../tools/baseService';
 import './CreateTeam.css';
 
-const RadioGroup = Radio.Group;
-const FormItem = Form.Item;
-const Option = Select.Option;
+
 export default class CreateTeam extends Component {
   constructor(props) {
     super(props);

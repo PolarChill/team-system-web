@@ -2,7 +2,7 @@
  * Created by hukui on 2018/8/4.
  */
 import React, {Component} from 'react';
-import {Select, Button, Input, Modal} from 'antd';
+import {Select, Modal} from 'antd';
 import urls from '../tools/urls';
 import BaseService from '../tools/baseService';
 import './AddTeamMember.css'
@@ -65,6 +65,7 @@ export default class AddTeamMember extends Component {
               cancelText="取消"
               allowClear={true}
               width={400}
+
           >
 
             <div className='content'>
@@ -77,6 +78,7 @@ export default class AddTeamMember extends Component {
                     placeholder="Select a person"
                     optionFilterProp="children"
                     onChange={this.handleCodeChange.bind(this)}
+                    // value={null}
                     filterOption={(input, option) => option.props.value.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                 >
                   {this.props.persons && this.props.persons.map((item, index) =>

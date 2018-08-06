@@ -36,7 +36,6 @@ export default class BaseService {
         if (result.message) {
           message.success(result.message);
         }
-        console.log(result.data)
         resolve(result.data)
       }
     } else {

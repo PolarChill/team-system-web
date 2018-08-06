@@ -2,9 +2,7 @@
  * Created by hukui on 2018/8/4.
  */
 import React, {Component} from 'react';
-import {Table, Button, Input, Modal} from 'antd';
-import urls from '../tools/urls';
-import BaseService from '../tools/baseService';
+import {Table, Modal} from 'antd';
 
 
 

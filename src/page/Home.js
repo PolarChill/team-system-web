@@ -1,22 +1,28 @@
 import React, {Component} from 'react';
 import './Home.css';
-import {Layout, Menu, Breadcrumb, Icon, Tabs, Select} from 'antd';
+import {Layout, Breadcrumb, Tabs} from 'antd';
 import TeamsList from "./teamManager/TeamsList";
 import PersonsList from "./personManager/PersonsList";
 import ActivityScore from "./activityScore/ActivityScore";
 
-const {SubMenu} = Menu;
-const {Header, Content, Footer, Sider} = Layout;
+const {Header, Content, Footer} = Layout;
 const TabPane = Tabs.TabPane;
-const Option = Select.Option;
 export default class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      refresh:false
+      refresh: false
     }
   }
-  handleOnChange () {
+  handleChange(key) {
+    if (key === 1) {
+      this.setState({
+        refresh: !this.state.refresh
+      })
+    }
+  }
+
+  handleOnChange() {
     this.setState({
       refresh: !this.state.refresh
     })
@@ -38,24 +44,24 @@ export default class Home extends Component {
               {/*<Breadcrumb.Item>App</Breadcrumb.Item>*/}
             </Breadcrumb>
             <Layout style={{padding: '24px 0', background: '#fff'}}>
-                <div>
-                  <div style={{ marginBottom: 16 }}>
+              <div>
+                <div style={{marginBottom: 16}}>
 
-                  </div>
-                  <Tabs tabPosition="left">
-
-                    <TabPane tab="小组管理" key="1" >
-                      <TeamsList refreshActivity={this.handleOnChange.bind(this)}/>
-                    </TabPane>
-                    <TabPane tab="人员管理" key="2">
-                      <PersonsList/>
-                    </TabPane>
-
-                    <TabPane tab="参与活动" key="3" >
-                      <ActivityScore refesh={this.state.refresh}/>
-                    </TabPane>
-                  </Tabs>
                 </div>
+                <Tabs tabPosition="left" onChange={this.handleChange.bind(this)}>
+
+                  <TabPane tab="小组管理" key="1">
+                    <TeamsList refreshActivity={this.handleOnChange.bind(this)}/>
+                  </TabPane>
+                  <TabPane tab="人员管理" key="2">
+                    <PersonsList/>
+                  </TabPane>
+
+                  <TabPane tab="参与活动" key="3">
+                    <ActivityScore refesh={this.state.refresh}/>
+                  </TabPane>
+                </Tabs>
+              </div>
 
             </Layout>
           </Content>

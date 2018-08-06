@@ -10,8 +10,6 @@ import ScoreDetails from './ScoreDetails'
 import AddTeamMember from "./AddTeamMember";
 import CreateTeam from "./CreateTeam";
 
-const Search = Input.Search;
-const confirm = Modal.confirm;
 
 
 export default class TeamsList extends Component {
@@ -30,6 +28,10 @@ export default class TeamsList extends Component {
       persons: [],  //不在队伍里的成员
 
     };
+    this.getInitialTeamsList()
+  }
+
+  componentDidUpdate() {
     this.getInitialTeamsList()
   }
 
