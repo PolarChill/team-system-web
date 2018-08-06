@@ -192,6 +192,10 @@ export default class TeamsList extends Component {
     }
     return null;
   };
+  refreshActivityScore() {
+    this.props.refreshActivity()
+
+  }
 
 
   render() {
@@ -202,7 +206,8 @@ export default class TeamsList extends Component {
           <Button type="primary" className="dg-ant-btn"
                   onClick={this.showModal}> + {'创建小组'}</Button>
           <CreateTeam visible={this.state.showAddTeamModal}
-                      close={this.disableModel}/>
+                      close={this.disableModel}
+          refreshActivityScore={this.refreshActivityScore.bind(this)}/>
           <AddTeamMember visible={this.state.addMemberModal}
                          team={this.state.team}
                          persons={this.state.persons}

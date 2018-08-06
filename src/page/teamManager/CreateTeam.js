@@ -70,6 +70,7 @@ export default class CreateTeam extends Component {
         slogan: '',
       })
       this.props.close(res);
+      this.props.refreshActivityScore();
     }).catch(() => {
 
       this.setState({confirmLoading: false});

@@ -9,18 +9,27 @@ import './ActivityScore.css'
 
 const Option = Select.Option;
 export default class ActivityScore extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       teams: [],
       teamCode: '',
       task: '',
-      score: ''
+      score: '',
+      refresh: false,
 
     }
     this.getInitialTeamsList()
+    console.log('activityScore  render')
   }
+  componentWillReceiveProps(nextProps) {
+      this.setState({
+        refresh: !this.state.refresh
+      });
+      this.getInitialTeamsList()
 
+  }
   getInitialTeamsList() {
     BaseService.ajax({
       url: urls.getAllTeams,
@@ -58,9 +67,8 @@ export default class ActivityScore extends Component {
 
     }).then((res) => {
       this.setState({
-        teamCode: '',
         task: '',
-        score: ''
+        score: '',
       })
       // this.props.close(res);
     }).catch(() => {

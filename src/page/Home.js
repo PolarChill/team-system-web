@@ -17,9 +17,8 @@ export default class Home extends Component {
     }
   }
   handleOnChange () {
-
     this.setState({
-      refresh: true
+      refresh: !this.state.refresh
     })
   }
 
@@ -43,19 +42,17 @@ export default class Home extends Component {
                   <div style={{ marginBottom: 16 }}>
 
                   </div>
-                  <Tabs tabPosition="left"
-                        onChange={this.handleOnChange.bind(this)}
-                  >
+                  <Tabs tabPosition="left">
 
-                    <TabPane tab="小组管理" key="1">
-                      <TeamsList/>
+                    <TabPane tab="小组管理" key="1" >
+                      <TeamsList refreshActivity={this.handleOnChange.bind(this)}/>
                     </TabPane>
                     <TabPane tab="人员管理" key="2">
                       <PersonsList/>
                     </TabPane>
 
-                    <TabPane tab="参与活动" key="3">
-                      <ActivityScore/>
+                    <TabPane tab="参与活动" key="3" >
+                      <ActivityScore refesh={this.state.refresh}/>
                     </TabPane>
                   </Tabs>
                 </div>
@@ -63,7 +60,7 @@ export default class Home extends Component {
             </Layout>
           </Content>
           <Footer style={{textAlign: 'center'}}>
-            Ant Design ©2016 Created by Ant UED
+            Team Management ©2018 Created by 奇人
           </Footer>
         </Layout>
     )
