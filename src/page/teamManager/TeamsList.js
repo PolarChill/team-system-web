@@ -11,7 +11,6 @@ import AddTeamMember from "./AddTeamMember";
 import CreateTeam from "./CreateTeam";
 
 
-
 export default class TeamsList extends Component {
 
   constructor(props) {
@@ -67,7 +66,6 @@ export default class TeamsList extends Component {
       key: 'code',
       width: '15%',
 
-
     },
     {
       title: '名称',
@@ -84,9 +82,7 @@ export default class TeamsList extends Component {
           return 1;
         }
         return 0;
-
       }
-
     },
     {
       title: '口号',
@@ -110,8 +106,6 @@ export default class TeamsList extends Component {
       sorter: (a, b) => a.score - b.score,
 
     },
-
-
     {
       title: '操作',
       dataIndex: 'operation',
@@ -194,6 +188,7 @@ export default class TeamsList extends Component {
     }
     return null;
   };
+
   refreshActivityScore() {
     this.props.refreshActivity()
 
@@ -201,23 +196,22 @@ export default class TeamsList extends Component {
 
 
   render() {
-
-
+    let {addMemberModal, scoreDetailsModal, memberModal} = this.state
     return (
         <div>
           <Button type="primary" className="dg-ant-btn"
                   onClick={this.showModal}> + {'创建小组'}</Button>
           <CreateTeam visible={this.state.showAddTeamModal}
                       close={this.disableModel}
-          refreshActivityScore={this.refreshActivityScore.bind(this)}/>
-          <AddTeamMember visible={this.state.addMemberModal}
-                         team={this.state.team}
-                         persons={this.state.persons}
-                         close={this.disableModel}/>
-          <TeamMembers visible={this.state.memberModal}
+                      refreshActivityScore={this.refreshActivityScore.bind(this)}/>
+          {addMemberModal && <AddTeamMember visible={addMemberModal}
+                                            team={this.state.team}
+                                            persons={this.state.persons}
+                                            close={this.disableModel}/>}
+          <TeamMembers visible={memberModal}
                        members={this.getKeyRecord(this.state.members)}
                        close={this.disableModel}/>
-          <ScoreDetails visible={this.state.scoreDetailsModal}
+          <ScoreDetails visible={scoreDetailsModal}
                         teamScores={this.getKeyRecord(this.state.teamScores)}
                         close={this.disableModel}/>
           <Table columns={this.columns} dataSource={this.getKeyRecord(this.state.tableData)}/>

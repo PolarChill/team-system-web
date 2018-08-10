@@ -5,10 +5,7 @@ import React, {Component} from 'react';
 import {Table, Modal} from 'antd';
 
 
-
 export default class TeamMembers extends Component {
-
-
 
 
   columns = [
@@ -17,8 +14,6 @@ export default class TeamMembers extends Component {
       dataIndex: 'code',
       key: 'code',
       width: '10%',
-
-
     },
     {
       title: '姓名',
@@ -37,7 +32,6 @@ export default class TeamMembers extends Component {
         return 0;
 
       }
-
     },
     {
       title: '性别',
@@ -47,7 +41,7 @@ export default class TeamMembers extends Component {
       render(text) {
         return (
             <div>
-              {text == 1 ? '男': '女'}
+              {text == 1 ? '男' : '女'}
             </div>
         )
       }
@@ -67,10 +61,7 @@ export default class TeamMembers extends Component {
   };
 
 
-
   render() {
-
-
     return (
         <div>
           <Modal
@@ -82,7 +73,6 @@ export default class TeamMembers extends Component {
           >
             <Table columns={this.columns} dataSource={this.props.members}/>
           </Modal>
-
         </div>
     )
   }

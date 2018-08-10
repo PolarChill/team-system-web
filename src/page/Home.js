@@ -14,6 +14,7 @@ export default class Home extends Component {
       refresh: false
     }
   }
+
   handleChange(key) {
     if (key === 1) {
       this.setState({

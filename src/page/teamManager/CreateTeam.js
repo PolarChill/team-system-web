@@ -17,17 +17,6 @@ export default class CreateTeam extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    // if (nextProps.visible) {
-    //   // this.setState({
-    //   //   editInfo: nextProps.editInfo
-    //   // })
-    //   // this.getInitRemoteSysTypes();
-    //   // this.getInitDatabaseTypes();
-    //   // this.getInitDbUrl();
-    // }
-  };
-
   nameInput = (e) => {
     this.setState({
       name: e.target.value
@@ -73,11 +62,7 @@ export default class CreateTeam extends Component {
 
       this.setState({confirmLoading: false});
       // this.props.close();
-
-
     })
-
-
   };
 
   render() {
@@ -105,7 +90,6 @@ export default class CreateTeam extends Component {
                   <span style={{marginRight: 20}}>名称</span><Input style={{width: 250}} value={name}
                                                                   onChange={this.nameInput.bind(this)}/>
                 </div>
-
                 <div className='slogan-input'>
                   <span style={{marginRight: 20}}>口号</span><Input style={{width: 300}} value={slogan}
                                                                   onChange={this.sloganInput.bind(this)}/>

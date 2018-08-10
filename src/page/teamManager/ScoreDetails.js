@@ -5,15 +5,7 @@ import React, {Component} from 'react';
 import {Table, Modal} from 'antd';
 
 
-
 export default class ScoreDetails extends Component {
-
-  // constructor(props) {
-  //   super(props);
-  //   this.state = ({
-  //     visible: this.props.visible,
-  //   });
-  // }
 
 
   columns = [
@@ -40,12 +32,7 @@ export default class ScoreDetails extends Component {
   };
 
 
-
-
-
   render() {
-
-
     return (
         <div>
           <Modal
@@ -65,6 +52,4 @@ export default class ScoreDetails extends Component {
 
 }
 
-/**
- * Created by hukui on 2018/8/4.
- */
+

@@ -45,10 +45,7 @@ export default class AddTeamMember extends Component {
 
       this.setState({confirmLoading: false});
       // this.props.close();
-
-
     })
-
   };
 
   render() {
@@ -77,6 +74,7 @@ export default class AddTeamMember extends Component {
                     style={{width: 200}}
                     placeholder="Select a person"
                     optionFilterProp="children"
+                    // value={this.props.persons &&this.props.persons[0].code }
                     onChange={this.handleCodeChange.bind(this)}
                     // value={null}
                     filterOption={(input, option) => option.props.value.toLowerCase().indexOf(input.toLowerCase()) >= 0}
